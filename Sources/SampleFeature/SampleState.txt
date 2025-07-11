@@ -1,0 +1,13 @@
+//
+//  SampleState.swift
+//  {{PROJECT_NAME}}
+//
+//  Created by {{AUTHOR}} on {{DATE}}
+//
+
+import ComposableArchitecture
+
+@ObservableState
+struct SampleState: Equatable {
+    var count = 0
+}

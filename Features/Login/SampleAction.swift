@@ -1,0 +1,37 @@
+//
+//  LoginAction.swift
+//  PROJECT_NAME
+//
+//  Created by keunwoo.park on 2025.07.12
+//
+
+import ComposableArchitecture
+
+enum LoginAction: BindableAction, ViewAction, Equatable {
+    // 바인딩처리가 필요할 때 사용
+    case binding(BindingAction<LoginState>)
+    // 뷰에서 발생하는 액션들을 View 서브-열거형 안에 둠
+    case view(View)
+    // 리듀서 내부에서 처리되는 액션 (예: 네트워크 응답)
+    case task(Task)
+    // 부모 리듀서에게 알리는 액션
+    case delegate(Delegate)
+    
+    // ViewAction 정의
+    enum View: Equatable {
+        case onAppear // 뷰가 나타났을 때
+        case decrementButtonTapped
+        case incrementButtonTapped
+    }
+
+    // Task 정의 (선택 사항)
+    enum Task: Equatable {
+        // API처리, 데이터 처리 등
+        // case apiResponse(Result<Bool, Error>)
+    }
+
+    // DelegateAction 정의 (선택 사항)
+    enum Delegate: Equatable {
+        //case loginSuccess // 부모에게 로그인 성공을 알림
+    }
+}

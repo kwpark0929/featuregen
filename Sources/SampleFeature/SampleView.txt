@@ -1,0 +1,46 @@
+//
+//  SampleView.swift
+//  {{PROJECT_NAME}}
+//
+//  Created by {{AUTHOR}} on {{DATE}}
+//
+
+import SwiftUI
+import ComposableArchitecture
+
+@ViewAction(for: SampleReducer.self)
+struct SampleView: View {
+    @Bindable var store: StoreOf<SampleReducer>
+    
+    // 바인딩 안쓸때
+    // let store: StoreOf<SampleReducer>
+
+    var body: some View {
+        HStack {
+            Button {
+                send(.decrementButtonTapped)
+            } label: {
+                Image(systemName: "minus")
+            }
+            
+            Text("\(store.count)")
+                .monospacedDigit()
+            
+            Button {
+                send(.incrementButtonTapped)
+            } label: {
+                Image(systemName: "plus")
+            }
+        }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        SampleView(
+            store: Store(initialState: SampleState()) {
+                SampleReducer()
+            }
+        )
+    }
+}
