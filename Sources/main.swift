@@ -54,8 +54,8 @@ func copyAndReplaceTemplateFiles(from templateDir: String, to destinationDir: St
         let templatePath = "\(templateDir)/\(fileName)"
         guard let newContent = replacePlaceholders(in: templatePath, featureName: featureName) else { continue }
 
-        var newFileName = fileName.replacingOccurrences(of: "Sample", with: featureName)
-        newFileName = fileName.replacingOccurrences(of: "txt", with: "swift")
+        let newFileName = fileName.replacingOccurrences(of: "Sample", with: featureName)
+            .replacingOccurrences(of: "txt", with: "swift")
         
         let newFilePath = "\(destinationDir)/\(newFileName)"
         try? newContent.write(toFile: newFilePath, atomically: true, encoding: .utf8)
