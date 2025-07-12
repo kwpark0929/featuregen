@@ -1,8 +1,8 @@
 //
 //  SampleReducer.swift
-//  {{PROJECT_NAME}}
+//  PROJECT_NAME
 //
-//  Created by {{AUTHOR}} on {{DATE}}
+//  Created by AUTHOR on DATE
 //
 
 import SwiftUI

@@ -1,19 +1,19 @@
 //
-//  LoginView.swift
-//  {{PROJECT_NAME}}
+//  SampleView.swift
+//  PROJECT_NAME
 //
-//  Created by {{keunwoo.park}} on {{2025.07.12}}
+//  Created by AUTHOR on DATE
 //
 
 import SwiftUI
 import ComposableArchitecture
 
-@ViewAction(for: LoginReducer.self)
-struct LoginView: View {
-    @Bindable var store: StoreOf<LoginReducer>
+@ViewAction(for: SampleReducer.self)
+struct SampleView: View {
+    @Bindable var store: StoreOf<SampleReducer>
     
     // 바인딩 안쓸때
-    // let store: StoreOf<LoginReducer>
+    // let store: StoreOf<SampleReducer>
 
     var body: some View {
         HStack {
@@ -37,9 +37,9 @@ struct LoginView: View {
 
 #Preview {
     NavigationStack {
-        LoginView(
-            store: Store(initialState: LoginState()) {
-                LoginReducer()
+        SampleView(
+            store: Store(initialState: SampleState()) {
+                SampleReducer()
             }
         )
     }
