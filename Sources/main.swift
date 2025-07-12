@@ -74,6 +74,10 @@ let project = getProjectName()
 let templateDir = "\(currentPath)/SampleFeature"
 let featurePath = "\(currentPath)/\(project)/Features/\(feature)"
 
+print("☑️ 템플릿 디렉토리：\(templateDir) ")
+print("☑️ Feature 생성패스: \(featurePath) ")
+
+
 try? FileManager.default.createDirectory(atPath: featurePath, withIntermediateDirectories: true)
 copyAndReplaceTemplateFiles(from: templateDir, to: featurePath, featureName: feature)
 
